@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 import mathFC
-import models
-from printCube import *
 
 def moveU(cube):
 	temp = [cube['F'][0][0], cube['F'][0][1], cube['F'][0][2]]
@@ -144,25 +142,3 @@ def moveB(cube):
 		cube['L'][i][0] = temp[i]
 		i +=1
 	mathFC.rotate90Clockwise(cube['B'])
-
-def main():
-	cube = models.faces
-	moveU(cube)
-	printCube(cube)
-	print("Move Right")
-	moveR(cube)
-	printCube(cube)
-	print("Move Left")
-	moveL(cube)
-	printCube(cube)
-	print("Move FRONT")
-	moveF(cube)
-	printCube(cube)
-	print("Move DOWN")
-	moveD(cube)
-	printCube(cube)
-	print("Move BACK")
-	moveB(cube)
-	printCube(cube)
-if __name__ == "__main__":
-	main()
